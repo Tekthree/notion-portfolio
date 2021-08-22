@@ -1,0 +1,16 @@
+.hero-image {
+  height: 50vh;
+  width: 100%;
+  background-image: url(../../assets/hero.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.small-text{
+  font-size: clamp(.6em, .7em, .8em );
+}
+
+.max-width{
+  max-width: 400px;
+}
