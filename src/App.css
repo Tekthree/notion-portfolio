@@ -1,18 +1,17 @@
 .page-wrapper {
-  min-height: 100vh;
   overflow: hidden;
 }
 
 .navbar-contain {
   margin: auto;
   max-width: 1920px;
-  padding: 1em 3.5em 1em 3.5em;
+  padding: 2.4em 2em 2.4em 2em;
 }
 
 .container {
   margin: auto;
   max-width: 1920px;
-  padding: 1em 3.5em 1em 3.5em;
+  padding: 1em 2em 1em 2em;
 }
 
 .flex-row {

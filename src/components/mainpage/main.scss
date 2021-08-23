@@ -1,5 +1,5 @@
 .hero-image {
-  height: 50vh;
+  height: 600px;
   width: 100%;
   background-image: url(../../assets/hero.jpg);
   background-position: center;
@@ -12,5 +12,31 @@
 }
 
 .max-width{
-  max-width: 400px;
+  max-width: 300px;
+}
+
+.hero-top-pad{
+  padding: 13em 2em 0 2em;
+  margin: auto;
+  max-width: 1920px;
+}
+
+.copy-two{
+  padding-top: 9em;
+  align-items: flex-end;
+  background-color: aqua;
+}
+
+.testimonials{
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: 10em;
+  background-color: black;
+  color: white;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 9em;
 }
