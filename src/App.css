@@ -6,12 +6,13 @@
   margin: auto;
   max-width: 1920px;
   padding: 2.4em 2em 2.4em 2em;
+
 }
 
 .container {
   margin: auto;
   max-width: 1920px;
-  padding: 1em 2em 1em 2em;
+  padding: 2em 2em 2em 2em;
 }
 
 .flex-row {
@@ -36,4 +37,13 @@
 
 .ml-two {
   margin-right: 20px;
+}
+
+
+@media only screen and (min-width: 1560px) {
+	body {font-size: 15.6px;}
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px)  {
+     p {font-size: 12.48px;}
 }

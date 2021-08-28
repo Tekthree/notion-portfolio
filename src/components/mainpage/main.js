@@ -1,7 +1,39 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./main.scss";
+import axios from "axios";
 
-export default function main() {
+export default function Main() {
+  const [heading, setHeading] = useState("");
+
+
+
+  useEffect(() => {
+   
+      .then((res) => {
+        const jwt = res.__raw;
+        const config2 = {
+          headers: { Authorization: `Bearer ${jwt}` },
+          method: "get",
+          baseURL: process.env.REACT_APP_SERVER,
+          url: "api/v2/bounties",
+        };
+        axios(config2)
+          // this is where we can make a request to GET bounty list
+          .then(function (response) {
+            let axiosResults = response.data;
+            setFormData([...axiosResults]);
+          })
+          .catch(function (err) {
+            console.error(err);
+          });
+      })
+      .catch(function (err) {
+        console.error(err);
+      });
+
+
+  },[]);
+
   return (
     <div>
       <section className="section">
