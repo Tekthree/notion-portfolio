@@ -1,38 +1,36 @@
 import React, { useEffect, useState } from "react";
 import "./main.scss";
-import axios from "axios";
+const { Client } = require("@notionhq/client");
 
 export default function Main() {
   const [heading, setHeading] = useState("");
 
-
-
   useEffect(() => {
-   
-      .then((res) => {
-        const jwt = res.__raw;
-        const config2 = {
-          headers: { Authorization: `Bearer ${jwt}` },
-          method: "get",
-          baseURL: process.env.REACT_APP_SERVER,
-          url: "api/v2/bounties",
-        };
-        axios(config2)
-          // this is where we can make a request to GET bounty list
-          .then(function (response) {
-            let axiosResults = response.data;
-            setFormData([...axiosResults]);
-          })
-          .catch(function (err) {
-            console.error(err);
-          });
-      })
-      .catch(function (err) {
-        console.error(err);
-      });
+    const secret = process.env.REACT_APP_SECRET;
+    const notionDatabase = process.env.REACT_APP_DATABASE_ID;
+    const notion = new Client({ auth: secret });
+    const myURl = "http://localhost:3000/"
 
+    const getData = async () =>{
+      const payload = {
+        headers:{
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": myURl,
+          "Access-Control-Request-Headers": 'Content-Type, Authorization'
 
-  },[]);
+      },
+        path: `databases/${notionDatabase}/query`,
+        method: 'POST',
+      };
+
+      const {results} = await notion.request(payload)
+
+      console.log(results)
+    }
+
+    getData()
+  
+  }, []);
 
   return (
     <div>
